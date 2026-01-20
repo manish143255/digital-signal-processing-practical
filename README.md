@@ -7,13 +7,11 @@ This repository contains MATLAB programs for DSP practical experiments for Unive
 2. Time Shifting
 3. Time Scaling
 4. Time Reversal
-5. Down Sampling
-6. Up Sampling
-7. Addition of Signals
-8. Subtraction of Signals
-9. Multiplication of Signals
-10. Periodic Signals
-11. Aperiodic Signals
+5. Addition of Signals
+6. Subtraction of Signals
+7. Multiplication of Signals
+8. Periodic Signals
+9. Aperiodic Signals
 
 ## Software Used
 - MATLAB R2025b
