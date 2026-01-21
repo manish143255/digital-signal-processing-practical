@@ -1,8 +1,8 @@
-# Digital Signal Processing Practical (MATLAB)
+## Digital Signal Processing Practical (MATLAB)
 
 This repository contains MATLAB programs for DSP practical experiments for University of Delhi students.
 
-# Experiments
+## Experiments
 1. Basic Discrete-Time Signals
 2. Time Shifting
 3. Time Scaling
@@ -13,7 +13,7 @@ This repository contains MATLAB programs for DSP practical experiments for Unive
 8. Periodic Signals
 9. Aperiodic Signals
 
-# Digital Signal Processing Practicals — Theory & Functions Used
+## Digital Signal Processing Practicals — Theory & Functions Used
 
 ---
 
