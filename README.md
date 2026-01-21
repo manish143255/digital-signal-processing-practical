@@ -13,62 +13,151 @@ This repository contains MATLAB programs for DSP practical experiments for Unive
 8. Periodic Signals
 9. Aperiodic Signals
 
-# 1. Basic Discrete-Time Signals
+# Digital Signal Processing Practicals — Theory & Functions Used
 
-Theory:
-A discrete-time signal is defined only at integer values of time n.
-Common signals are unit impulse, unit step, ramp, exponential and sinusoidal.
+---
 
-delta = (n == 0);          % Unit impulse
-u = (n >= 0);             % Unit step
-r = n .* (n >= 0);        % Ramp
-x = (0.8).^n .* (n >= 0); % Exponential
+## 1. Basic Discrete-Time Signals
 
-# 2. Time Shifting
+### Theory  
+A discrete-time signal is a sequence of numbers defined only at integer values of time.  
+Common discrete-time signals are:
+- Unit impulse: δ[n]
+- Unit step: u[n]
+- Ramp: r[n]
+- Exponential: aⁿu[n]
+- Sinusoidal: sin(ωn)
 
-Theory:
-Time shifting delays or advances a signal.
-Delay: x[n-k]
-Advance: x[n+k]
+These signals are basic building blocks in digital signal processing.
 
+### Functions Used
+- `stem()` → used to plot discrete-time signals  
+- `xlabel()` → label x-axis  
+- `ylabel()` → label y-axis  
+- `title()` → give title to graph  
+- `grid on` → show grid  
 
-# 3. Time Scaling
+---
 
-Theory:
-Time scaling compresses or expands a signal.
-Compression: x[2n]
-Expansion: x[n/2]
+## 2. Time Shifting
 
-# 4. Time Reversal
+### Theory  
+Time shifting moves a signal left or right on the time axis.  
+- Delay: x[n − k] (shift right)  
+- Advance: x[n + k] (shift left)
 
-Theory:
-Time reversal reflects the signal about n = 0.
-y[n] = x[-n]
+It does not change the shape of the signal, only its position.
 
-# 5. Addition of Signals
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
 
-Theory:
-y[n] = x1[n] + x2[n]
+---
 
-# 6. Subtraction of Signals
+## 3. Time Scaling
 
-Theory:
-y[n] = x1[n] - x2[n]
+### Theory  
+Time scaling compresses or expands a signal.  
+- Compression: x[2n] → faster signal  
+- Expansion: x[n/2] → slower signal  
 
-# 7. Multiplication of Signals
+This changes the time axis but not the amplitude.
 
-Theory:
-y[n] = x1[n] · x2[n]
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
 
-# 8. Periodic Signals
+---
 
-Theory:
-A signal is periodic if x[n] = x[n+N]
+## 4. Time Reversal
 
-# 9. Aperiodic Signals
+### Theory  
+Time reversal flips a signal about n = 0.  
+y[n] = x[−n]
 
-Theory:
-A signal that does not repeat after any finite interval is aperiodic.
+It is also called folding of a signal.
+
+### Functions Used
+- `fliplr()` → reverses the signal sequence  
+- `stem()`  
+- `title()`  
+- `grid on`  
+
+---
+
+## 5. Addition of Signals
+
+### Theory  
+Addition combines two signals sample by sample.  
+y[n] = x₁[n] + x₂[n]
+
+Used in mixing and superposition of signals.
+
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
+
+---
+
+## 6. Subtraction of Signals
+
+### Theory  
+Subtraction gives the difference between two signals.  
+y[n] = x₁[n] − x₂[n]
+
+Used in noise cancellation and error signals.
+
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
+
+---
+
+## 7. Multiplication of Signals
+
+### Theory  
+Multiplication combines two signals sample by sample.  
+y[n] = x₁[n] · x₂[n]
+
+Used in modulation and windowing.
+
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
+
+---
+
+## 8. Periodic Signals
+
+### Theory  
+A signal is periodic if it repeats after a fixed interval N.  
+x[n] = x[n + N]
+
+N is called the fundamental period.
+
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
+
+---
+
+## 9. Aperiodic Signals
+
+### Theory  
+A signal that does not repeat for any finite value of N is called aperiodic.
+
+### Functions Used
+- `stem()`  
+- `title()`  
+- `grid on`  
+
+---
 
 ## Software Used
 - MATLAB R2025b
