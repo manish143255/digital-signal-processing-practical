@@ -17,14 +17,14 @@ grid on
 subplot(3,1,2)
 stem(n, u_left, 'r', 'filled')
 xlabel('n')
-ylabel(['u[n-' num2str(k) ']'])
+ylabel(['u[n+' num2str(k) ']'])
 legend(['u[n+' num2str(k) ']'], Location='northwest')
 title(['Unit step function left shifted by ' num2str(k) ' units '])
 grid on
 subplot(3,1,3)
 stem(n, u_right, 'b', 'filled')
 xlabel('n')
-ylabel(['u[n+' num2str(k) ']'])
+ylabel(['u[n-' num2str(k) ']'])
 legend(['u[n-' num2str(k) ']'], Location='northwest')
 title(['Unit step function right shifted by ' num2str(k) ' units '])
 grid on
