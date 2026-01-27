@@ -43,5 +43,5 @@ subplot(2,1,2)
 stem(n, x4, 'filled')
 title('Left-sided decaying exponential')
 xlabel('n'); ylabel('(1/3)^n u[-n-1]')
-legend('(1/3)^n u[-n-1]', Location= 'northwest')
+legend('(1/3)^n u[-n-1]', Location= 'northeast')
 grid on
