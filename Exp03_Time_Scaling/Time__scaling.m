@@ -1,75 +1,50 @@
 clc; clear; close all;
 
-% Time range
-N = input('Enter time range N (for -N to N): ');
-n = -N:N;
+% Original signal
+n = -3:3;
+x = [2 -1 3 2 1 3 -2];
 
-% Choose base signal
-disp('Choose a signal:');
-disp('1. Unit Step');
-disp('2. Unit Impulse');
-disp('3. Ramp');
-disp('4. Exponential');
+% 2. Compression 
+% This effectively keeps samples where 2n is integers within range.
+x2 = interp1(n, x, 2*n, 'nearest', 0);
+x3 = interp1(n, x, 3*n, 'nearest', 0);
 
-choice = input('Enter your choice (1-4): ');
+% 3. Expansion (Zero Insertion / Upsampling)
+L2 = 2;
+n_exp2 = (L2 * min(n)) : (L2 * max(n)); 
+x_n2 = zeros(1, length(n_exp2));
+% 'ismember' finds indices in n_exp2 that match the stretched original times
+x_n2(ismember(n_exp2, n * L2)) = x;
 
-switch choice
-    case 1
-        x = double(n >= 0);                     % Unit step
-        name = 'Unit Step u[n]';
-        
-    case 2
-        x = double(n == 0);                    % Unit impulse
-        name = 'Unit Impulse \delta[n]';
-        
-    case 3
-        x = n .* (n >= 0);               % Ramp
-        name = 'Ramp r[n]';
-        
-    case 4
-        a = input('Enter exponential base a: ');
-        x = a.^n;                       % Exponential
-        name = ['Exponential x[n] = ' num2str(a) '^n'];
-end
+L3 = 3;
+n_exp3 = (L3 * min(n)) : (L3 * max(n));
+x_n3 = zeros(1, length(n_exp3));
+x_n3(ismember(n_exp3, n * L3)) = x;
 
-x2  = interp1(n,x,2*n,'nearest',0);     % x[2n]  (compressed)
-x3  = interp1(n,x,3*n,'nearest',0);     % x[3n]  (more compressed)
-xn2 = interp1(n,x,n/2,'nearest',0);     % x[n/2] (expanded)
-xn3 = interp1(n,x,n/3,'nearest',0);     % x[n/3] (more expanded)
-
+% 4. Plotting
 figure
 
 subplot(5,1,1)
-stem(n,x,'r', 'filled')
-title(['Original: ' name])
-xlabel('n'); ylabel('x[n]')
-legend('x[n]',Location= 'northwest')
-grid on
+stem(n, x, 'filled', 'LineWidth', 1)
+title('Original x[n]')
+grid on; axis tight; ylim([-3 4]);
 
 subplot(5,1,2)
-stem(n,x2,'b','filled')
-title('Time Compressed: x[2n]')
-xlabel('n'); ylabel('x[2n]')
-legend('x[2n]',Location= 'northwest')
-grid on
+stem(n, x2, 'filled', 'LineWidth', 1)
+title('Time Compressed: x[2n] ')
+grid on; axis tight; ylim([-3 4]);
 
 subplot(5,1,3)
-stem(n,x3,'r','filled')
+stem(n, x3, 'filled', 'LineWidth', 1)
 title('Time Compressed: x[3n]')
-xlabel('n'); ylabel('x[3n]')
-legend('x[3n]',Location= 'northwest')
-grid on
+grid on; axis tight; ylim([-3 4]);
 
 subplot(5,1,4)
-stem(n,xn2,'b', 'filled')
+stem(n_exp2, x_n2, 'filled', 'LineWidth', 1)
 title('Time Expanded: x[n/2]')
-xlabel('n'); ylabel('x[n/2]')
-legend('x[n/2]',Location= 'northwest')
-grid on
+grid on; axis tight; ylim([-3 4]);
 
 subplot(5,1,5)
-stem(n,xn3,'r','filled')
+stem(n_exp3, x_n3, 'filled', 'LineWidth', 1)
 title('Time Expanded: x[n/3]')
-xlabel('n'); ylabel('x[n/3]')
-legend('x[n/3]',Location= 'northwest')
-grid on
+grid on; axis tight; ylim([-3 4]);
