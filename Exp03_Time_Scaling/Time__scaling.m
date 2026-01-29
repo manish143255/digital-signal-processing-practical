@@ -28,23 +28,28 @@ subplot(5,1,1)
 stem(n, x, 'filled', 'LineWidth', 1)
 title('Original x[n]')
 grid on; axis tight; ylim([-3 4]);
+xlabel('n'); ylabel('x[n]')
 
 subplot(5,1,2)
 stem(n, x2, 'filled', 'LineWidth', 1)
 title('Time Compressed: x[2n] ')
 grid on; axis tight; ylim([-3 4]);
+xlabel('n'); ylabel('x[2n]')
 
 subplot(5,1,3)
 stem(n, x3, 'filled', 'LineWidth', 1)
 title('Time Compressed: x[3n]')
 grid on; axis tight; ylim([-3 4]);
+xlabel('n'); ylabel('x[3n]')
 
 subplot(5,1,4)
 stem(n_exp2, x_n2, 'filled', 'LineWidth', 1)
 title('Time Expanded: x[n/2]')
 grid on; axis tight; ylim([-3 4]);
+xlabel('n'); ylabel('x[n/2]')
 
 subplot(5,1,5)
 stem(n_exp3, x_n3, 'filled', 'LineWidth', 1)
 title('Time Expanded: x[n/3]')
 grid on; axis tight; ylim([-3 4]);
+xlabel('n'); ylabel('x[n/3]')
