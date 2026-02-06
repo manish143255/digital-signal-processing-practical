@@ -189,12 +189,12 @@ using MATLAB simulation.
 - Important in pulse shaping and signal smoothing
 
 ### Functions Used
-- conv()      → computes linear convolution
-- stem()      → plots discrete-time signals
-- xlabel()    → label x-axis
-- ylabel()    → label y-axis
-- title()     → graph title
-- grid on     → enable grid
+- `conv()`      → computes linear convolution
+- `stem()`      → plots discrete-time signals
+- `xlabel()`    → label x-axis
+- `ylabel()`    → label y-axis
+- `title()`     → graph title
+- `grid on`     → enable grid
 
 ---
 
@@ -212,8 +212,8 @@ Linear convolution can be computed using circular convolution by applying
 zero padding to both sequences.
 
 Steps:
-1. Let x[n] be of length L1 and h[n] be of length L2
-2. Required length L = L1 + L2 − 1
+1. Let x[n] be of length M and h[n] be of length N
+2. Required length L = M + N − 1
 3. Zero-pad both sequences to length L
 4. Perform circular convolution
 5. The result matches linear convolution
@@ -227,11 +227,11 @@ efficient and forms the basis of FFT-based convolution.
 - Links time-domain and frequency-domain analysis
 
 ### Functions Used
-- cconv()     → circular convolution
-- conv()      → linear convolution (verification)
-- zeros()     → zero padding
-- length()    → sequence length
-- stem()      → plot output
+- `cconv()`     → circular convolution
+- `conv()`      → linear convolution (verification)
+- `zeros()`     → zero padding
+- `length()`   → sequence length
+- `stem()`      → plot output
 
 ## Software Used
 - MATLAB R2025b
