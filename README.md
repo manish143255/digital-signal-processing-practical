@@ -159,6 +159,80 @@ A signal that does not repeat for any finite value of N is called aperiodic.
 
 ---
 
+## 10. Convolution Sum of Gate (Rectangular) Function
+
+### Theory
+Convolution is a fundamental operation in Digital Signal Processing used to determine the output of a Linear Time-Invariant (LTI) system for a given input.
+
+For discrete-time signals, convolution is defined as:
+
+y[n] = Σ x[k] · h[n − k] ,  for k = −∞ to ∞
+
+In this experiment, the signal is a rectangular (gate) function defined as:
+
+x(n) = rect(n / 2N) =
+{
+  1,  −N ≤ n ≤ N
+  0,  otherwise
+}
+
+When a rectangular signal is convolved with itself, the output is a triangular signal.
+This happens because the amount of overlap between the two rectangular signals
+increases linearly, reaches a maximum, and then decreases linearly.
+
+This experiment verifies the theoretical triangular shape of convolution
+using MATLAB simulation.
+
+### Physical Significance
+- Used to analyze LTI system response
+- Models finite-duration pulses
+- Important in pulse shaping and signal smoothing
+
+### Functions Used
+- conv()      → computes linear convolution
+- stem()      → plots discrete-time signals
+- xlabel()    → label x-axis
+- ylabel()    → label y-axis
+- title()     → graph title
+- grid on     → enable grid
+
+---
+
+## 11. Linear Convolution Using Circular Convolution
+
+### Theory
+Circular convolution is defined for finite-length sequences and assumes
+the signals are periodic.
+
+The circular convolution is given by:
+
+y[n] = Σ x[k] · h[(n − k) mod N]
+
+Linear convolution can be computed using circular convolution by applying
+zero padding to both sequences.
+
+Steps:
+1. Let x[n] be of length L1 and h[n] be of length L2
+2. Required length L = L1 + L2 − 1
+3. Zero-pad both sequences to length L
+4. Perform circular convolution
+5. The result matches linear convolution
+
+This method is important because circular convolution is computationally
+efficient and forms the basis of FFT-based convolution.
+
+### Physical Significance
+- Used in fast convolution algorithms
+- Essential in digital filtering
+- Links time-domain and frequency-domain analysis
+
+### Functions Used
+- cconv()     → circular convolution
+- conv()      → linear convolution (verification)
+- zeros()     → zero padding
+- length()    → sequence length
+- stem()      → plot output
+
 ## Software Used
 - MATLAB R2025b
 
