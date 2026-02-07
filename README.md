@@ -87,27 +87,15 @@ It is also called folding of a signal.
 
 ---
 
-## 5. Addition of Signals
+## 5. Addition and Subtraction of Signals
 
 ### Theory  
 Addition combines two signals sample by sample.  
 y[n] = x₁[n] + x₂[n]
-
 Used in mixing and superposition of signals.
 
-### Functions Used
-- `stem()`  
-- `title()`  
-- `grid on`  
-
----
-
-## 6. Subtraction of Signals
-
-### Theory  
-Subtraction gives the difference between two signals.  
+Subtraction gives the difference between two signals. 
 y[n] = x₁[n] − x₂[n]
-
 Used in noise cancellation and error signals.
 
 ### Functions Used
@@ -117,7 +105,7 @@ Used in noise cancellation and error signals.
 
 ---
 
-## 7. Multiplication of Signals
+## 6. Multiplication of Signals
 
 ### Theory  
 Multiplication combines two signals sample by sample.  
@@ -132,7 +120,7 @@ Used in modulation and windowing.
 
 ---
 
-## 8. Periodic Signals
+## 7. Periodic Signals
 
 ### Theory  
 A signal is periodic if it repeats after a fixed interval N.  
@@ -147,7 +135,7 @@ N is called the fundamental period.
 
 ---
 
-## 9. Aperiodic Signals
+## 8. Aperiodic Signals
 
 ### Theory  
 A signal that does not repeat for any finite value of N is called aperiodic.
@@ -159,7 +147,7 @@ A signal that does not repeat for any finite value of N is called aperiodic.
 
 ---
 
-## 10. Convolution Sum of Gate (Rectangular) Function
+## 9. Convolution Sum of Gate (Rectangular) Function
 
 ### Theory
 Convolution is a fundamental operation in Digital Signal Processing used to determine the output of a Linear Time-Invariant (LTI) system for a given input.
@@ -198,7 +186,7 @@ using MATLAB simulation.
 
 ---
 
-## 11. Linear Convolution Using Circular Convolution
+## 10. Linear Convolution Using Circular Convolution
 
 ### Theory
 Circular convolution is defined for finite-length sequences and assumes
@@ -217,9 +205,6 @@ Steps:
 3. Zero-pad both sequences to length L
 4. Perform circular convolution
 5. The result matches linear convolution
-
-This method is important because circular convolution is computationally
-efficient and forms the basis of FFT-based convolution.
 
 ### Physical Significance
 - Used in fast convolution algorithms
