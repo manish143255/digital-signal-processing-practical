@@ -7,11 +7,12 @@ This repository contains MATLAB programs for DSP practical experiments for Unive
 2. Time Shifting
 3. Time Scaling
 4. Time Reversal
-5. Addition of Signals
-6. Subtraction of Signals
-7. Multiplication of Signals
-8. Periodic Signals
-9. Aperiodic Signals
+5. Addition and Subtraction of Signals
+6. Multiplication of Signals
+7. Periodic Signals
+8. Aperiodic Signals
+9. Convolution Sum of Gate (Rectangular) Function
+10. Linear Convolution Using Circular Convolution
 
 ## Digital Signal Processing Practicals — Theory & Functions Used
 
