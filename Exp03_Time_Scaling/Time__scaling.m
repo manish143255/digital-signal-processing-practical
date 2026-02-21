@@ -3,7 +3,6 @@ clc; clear; close all;
 % Original signal
 n = -4:4;
 x = [2 -1 3 2 1 -2 3 3 -2];
-
 % 2. Compression 
 % This effectively keeps samples where 2n is integers within range.
 x2 = interp1(n, x, 2*n, 'nearest', 0);
