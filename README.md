@@ -225,7 +225,9 @@ The frequency response shows how a system changes the strength (amplitude) and t
 $$H(e^{j\omega}) = \text{Real Part} + j(\text{Imaginary Part})$$
 
 From this complex number, we calculate two key values:
-1. **Magnitude (Mod):** $|H| = \sqrt{\text{Real}^2 + \text{Imaginary}^2}$. It shows the gain.
+1. **Magnitude (Mod):** 
+			$|H| = \sqrt{\text{Real}^2 + \text{Imaginary}^2}$.   It shows the gain.
+
 2. **Phase:** $\angle H = \tan^{-1}(\text{Imaginary} / \text{Real})$. It shows the shift.
 
 In this experiment, we observe that the magnitude is highest at $\omega = 0$. This means the system is a **Low-Pass Filter**, which allows slow-changing signals to pass through easily while blocking high-speed fluctuations.
