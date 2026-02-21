@@ -1,5 +1,4 @@
 clc; clear; close all;
-
 % Given sequences
 x = [1 2 2 1];
 h = [1 -1 -1 1];
