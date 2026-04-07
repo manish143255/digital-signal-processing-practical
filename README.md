@@ -240,6 +240,45 @@ In this experiment, we observe that the magnitude is highest at $\omega = 0$. Th
 - `subplot()` → divides the figure into two parts for Magnitude and Phase.
 - `Interpreter`, `latex` → renders mathematical symbols like $\omega$ and $\angle$ in the plots.
 
+## 12. Steady-State Response of an LTI System
+
+### Theory
+The steady-state response of a Linear Time-Invariant (LTI) system is its long-term behavior after initial temporary fluctuations (transient response) have faded.
+
+When an LTI system is driven by a sinusoidal input $x(n) = A\cos(\omega_0 n)u(n)$, the steady-state output $y_{ss}(n)$ will be a sinusoid of the **exact same frequency**, but its amplitude will be scaled and its phase will be shifted. These changes are determined by the system's frequency response evaluated at the input frequency $\omega_0$.
+
+The mathematical relationship is:
+$$y_{ss}(n) = A \cdot |H(e^{j\omega_0})| \cos(\omega_0 n + \angle H(e^{j\omega_0}))$$
+
+For a system defined by the difference equation $y(n) = ay(n-1) + x(n)$, we first find the frequency response $H(e^{j\omega}) = \frac{1}{1 - a e^{-j\omega}}$, and then evaluate its magnitude and phase at $\omega_0$ to determine the final output waveform.
+
+### Functions Used
+- `freqz()` → computes the complex frequency response $H$ at a specific frequency point
+- `abs()` → calculates the scaling factor (magnitude) applied to the input
+- `angle()` → calculates the time delay (phase shift) applied to the input
+- `cos()` → generates the steady-state sinusoidal output
+- `stem()` → plots the discrete-time output sequence
+
+
+---
+
+## 13. Pole-Zero Plot and Stability Analysis
+
+### Theory
+The Z-transform is a mathematical tool used to analyze discrete-time systems. Applying the Z-transform to a difference equation yields the system's transfer function, $H(z)$.
+
+$$H(z) = \frac{Y(z)}{X(z)} = \frac{\text{Numerator Polynomial}}{\text{Denominator Polynomial}}$$
+
+This transfer function is characterized by two types of roots:
+1. **Zeros:** Values of $z$ that make the numerator exactly zero, causing $H(z) = 0$. These represent frequencies the system blocks.
+2. **Poles:** Values of $z$ that make the denominator exactly zero, causing $H(z)$ to approach infinity. These represent the natural resonances of the system.
+
+A visual representation of these roots on the complex Z-plane is called a **Pole-Zero Plot**. This plot is critical for determining system stability. For a causal LTI system to be stable, all of its poles must lie strictly **inside the unit circle** ($|z| < 1$). If any pole is on or outside the unit circle, the system is unstable and will grow out of control.
+
+### Functions Used
+- `roots()` → mathematically calculates the zeros (numerator roots) and poles (denominator roots)
+- `zplane()` → automatically calculates roots from system coefficients and plots them on the complex Z-plane alongside the unit circle
+
 ## Software Used
 - MATLAB R2025b
 
