@@ -279,6 +279,30 @@ A visual representation of these roots on the complex Z-plane is called a **Pole
 - `roots()` → mathematically calculates the zeros (numerator roots) and poles (denominator roots)
 - `zplane()` → automatically calculates roots from system coefficients and plots them on the complex Z-plane alongside the unit circle
 
+
+---
+
+## 14. Discrete Fourier Transform (DFT) and Zero-Padding
+
+### Theory
+The **Discrete-Time Fourier Transform (DTFT)** provides a continuous frequency spectrum of a discrete-time signal. However, computers cannot process continuous functions. To analyze signals digitally, we use the **Discrete Fourier Transform (DFT)**, which calculates the frequency spectrum at a finite number of discrete, equally spaced frequency points. 
+
+Mathematically, an $N$-point DFT takes $N$ samples of the continuous DTFT from $0$ to $2\pi$. 
+
+**Zero-Padding** is the process of appending zeros to the end of a time-domain sequence before computing the DFT. 
+* **What it does NOT do:** Zero-padding does not add new information to the signal, nor does it increase the actual frequency resolution (the ability to distinguish between two closely spaced frequencies).
+* **What it DOES do:** Zero-padding increases the number of points calculated by the DFT. This acts as a mathematical **interpolator**. By calculating more points, the discrete DFT plot "fills in" the gaps, allowing us to see a smoother, more detailed curve that closely matches the true, continuous shape of the DTFT.
+
+In this experiment, we take a 4-point rectangular sequence and compute its 4-point, 8-point, and 16-point DFTs. As we append more zeros, we observe the discrete stems trace out the familiar "sinc" wave envelope of the underlying DTFT.
+
+### Functions Used
+- `fft()` → computes the Fast Fourier Transform (an efficient algorithm for DFT). The second argument defines the $N$-point size, automatically zero-padding if $N$ is larger than the sequence or you can calculate analytically which I have calculated in code.
+- `abs()` → computes the magnitude of the complex DFT output.
+- `linspace()` → generates linearly spaced vectors for the frequency axis.
+- `plot()` → draws the continuous DTFT approximation.
+- `stem()` → draws the discrete samples of the DFT.
+- `subplot()` → arranges multiple plots in a grid.
+
 ## Software Used
 - MATLAB R2025b
 
